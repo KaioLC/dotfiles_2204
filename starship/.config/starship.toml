@@ -1,0 +1,33 @@
+# Ordem do que aparece no terminal
+format = "$directory$git_branch$git_status$nix_shell$character"
+
+# Diretório atual (em branco)
+[directory]
+style = "bold white"
+read_only = " [RO]"
+truncation_length = 3
+truncate_to_repo = false
+
+# Seta do prompt (Branca se o comando deu certo, Vermelha se deu erro)
+[character]
+success_symbol = "[>](bold white)"
+error_symbol = "[>](bold red)"
+
+# Remove os ícones e deixa o Git em cinza escuro
+[git_branch]
+symbol = ""
+style = "bold bright-black"
+format = "[$symbol$branch]($style) "
+
+[git_status]
+style = "bold bright-black"
+
+# Indicador do Nix-shell (cinza escuro, super discreto)
+[nix_shell]
+symbol = "nix"
+format = "via [$symbol]($style) "
+style = "bold bright-black"
+
+# Desativa o módulo que mostra a versão de linguagens (Python, Node, etc) para manter limpo
+[package]
+disabled = true
