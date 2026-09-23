@@ -30,11 +30,11 @@ nix:
 	
 clean-stow:
 	@echo "==> Removendo configurações antigas..."
-	rm -rf ~/.config/kitty ~/.config/fish ~/.config/i3 ~/.config/starship.toml ~/.config/nvim
+	rm -rf ~/.config/kitty ~/.config/fish ~/.config/i3 ~/.config/starship.toml ~/.config/nvim ~/.config/polybar ~/.config/rofi ~/.config/picom
 
 stow: clean-stow
 	@echo "==> Aplicando dotfiles com Stow..."
-	stow kitty fish i3 starship nvim
+	stow kitty fish i3 starship nvim polybar rofi picom
 
 shell:
 	@echo "==> Mudando shell para o Fish..."

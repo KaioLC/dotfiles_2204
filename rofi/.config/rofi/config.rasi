@@ -1,0 +1,52 @@
+configuration {
+    modi: "drun";
+    show-icons: true;
+    terminal: "kitty";
+    drun-display-format: "{icon} {name}";
+    display-drun: "   Apps:";
+}
+
+* {
+    bg: #1E1E2E;
+    fg: #CDD6F4;
+    accent: #89B4FA;
+    background-color: @bg;
+    text-color: @fg;
+}
+
+window {
+    width: 35%;
+    border: 2px;
+    border-color: @accent;
+    border-radius: 8px;
+    padding: 15px;
+}
+
+prompt {
+    text-color: @accent;
+    padding: 0px 10px 0px 0px;
+}
+
+entry {
+    placeholder: "Pesquisar aplicativo...";
+    text-color: @fg;
+}
+
+listview {
+    lines: 7;
+    padding: 15px 0px 0px 0px;
+}
+
+element {
+    padding: 8px;
+    border-radius: 5px;
+}
+
+element selected {
+    background-color: #313244;
+    text-color: @accent;
+}
+//@theme "/usr/share/rofi/themes/sidebar.rasi"
+//@theme "/usr/share/rofi/themes/gruvbox-common.rasi"
+//@theme "/usr/share/rofi/themes/Paper.rasi"
+@theme "/usr/share/rofi/themes/Monokai.rasi"
