@@ -26,7 +26,9 @@ nix:
 	nixpkgs#eza \
 	nixpkgs#gh \
 	nixpkgs#delta \
-	nixpkgs#neovim
+	nixpkgs#neovim \
+	--extra-experimental-features "nix-command flakes"
+
 	
 clean-stow:
 	@echo "==> Removendo configurações antigas..."
