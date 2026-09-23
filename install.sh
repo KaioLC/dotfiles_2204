@@ -7,6 +7,8 @@ sudo apt update
 curl -L https://nixos.org/nix/install | sh -s -- --daemon
 sudo apt install -y i3 kitty fish stow xclip curl git polybar rofi feh picom flameshot
 
+
+. /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
 echo "Instalando ferramentas de terminal via Nix..."
 nix profile add \
   nixpkgs#starship \
