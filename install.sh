@@ -5,7 +5,7 @@ echo "Iniciando a instalação do ambiente..."
 echo "Instalando base do sistema (nix, i3, kitty, fish, stow, xclip)..."
 sudo apt update
 curl -L https://nixos.org/nix/install | sh -s -- --daemon
-sudo apt install -y i3 kitty fish stow xclip curl git
+sudo apt install -y i3 kitty fish stow xclip curl git polybar rofi feh picom flameshot
 
 echo "Instalando ferramentas de terminal via Nix..."
 nix profile add \
