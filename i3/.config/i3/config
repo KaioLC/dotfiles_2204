@@ -45,7 +45,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec kitty
+bindsym $mod+Return exec env GLFW_IM_MODULE=none ~/.local/kitty.app/bin/kitty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -189,7 +189,7 @@ exec_always --no-startup-id bash $HOME/.screenlayout/default_setup.sh
 
 exec_always --no-startup-id bash $HOME/.config/polybar/launch.sh
 
-exec_always --no-startup-id feh --bg-fill /home/kaio/Imagens/blackhole_wp.jpg
+exec_always --no-startup-id feh --bg-fill $HOME/.config/i3/wallpaper.jpg
 
 # Iniciar o compositor visual (em background com -b)
 exec_always --no-startup-id picom -b
@@ -207,12 +207,16 @@ bindsym Print exec flameshot gui
 # client.focused_inactive #333333 #333333 #888888 #333333   #333333
 # client.urgent           #ff0000 #ff0000 #ffffff #ff0000   #ff0000
 
-# Desativa as barras de título e deixa apenas 1 pixel de borda
-default_border pixel 1
-default_floating_border pixel 1
+# Esconde bordas nas laterais da tela (evita as "bordas pretas")
+hide_edge_borders both
 
+# Desativa as barras de título e deixa apenas 1 pixel de borda
+default_border pixel 0
+default_floating_border pixel 0
+
+# Minimalist color scheme (Flat, clean, no neon)
 # class                 border  backgr. text    indicator child_border
-client.focused          #555555 #000000 #ffffff #555555   #555555
-client.unfocused        #000000 #000000 #888888 #000000   #000000
-client.focused_inactive #000000 #000000 #888888 #000000   #000000
-client.urgent           #ff0000 #000000 #ffffff #ff0000   #ff0000
+client.focused          #666666 #222222 #ffffff #666666   #666666
+client.unfocused        #222222 #222222 #888888 #222222   #222222
+client.focused_inactive #222222 #222222 #888888 #222222   #222222
+client.urgent           #bd2c40 #222222 #ffffff #bd2c40   #bd2c40
