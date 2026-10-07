@@ -1,0 +1,88 @@
+[global]
+    font = JetBrainsMono Nerd Font 10
+
+    # Allow a small markup
+    markup = yes
+
+    # The format of the message.
+    format = "<b>%s</b>\n%b"
+
+    # Sort messages by urgency.
+    sort = yes
+
+    # Indicate hidden notifications.
+    indicate_hidden = yes
+
+    # Alignment of message text.
+    alignment = center
+
+    # Show age of message if message is older than show_age_threshold
+    # seconds.
+    show_age_threshold = 60
+
+    # Split notifications into multiple lines if they don't fit into
+    # geometry.
+    word_wrap = yes
+
+    # Ignore newlines '\n' in notifications.
+    ignore_newline = no
+
+    # The geometry of the window:
+    # [{width}]x{height}[+/-{x}+/-{y}]
+    # Width 300, max 5 notifications, centered on 1920x1080 (X=810), 50px from top
+    geometry = "300x5+810+50"
+
+    # Shrink window if it's smaller than the width.
+    shrink = no
+
+    # Transparency
+    transparency = 0
+
+    # Don't remove messages, if the user is idle (no mouse or keyboard input)
+    idle_threshold = 120
+
+    # Which monitor should the notifications be displayed on.
+    monitor = 0
+
+    # Display notification on focused monitor.
+    follow = none
+
+    # The height of a single line.
+    line_height = 0
+
+    # Space in pixels between the notifications
+    separator_height = 2
+
+    # Padding between text and separator.
+    padding = 10
+
+    # Horizontal padding.
+    horizontal_padding = 10
+
+    # Defines width in pixels of frame around the notification window.
+    frame_width = 2
+
+    # Define a color for the separator.
+    separator_color = frame
+
+    # Some nice border radius
+    corner_radius = 4
+
+[urgency_low]
+    # Minimalist Dark Theme
+    background = "#222222"
+    foreground = "#888888"
+    frame_color = "#666666"
+    timeout = 10
+
+[urgency_normal]
+    background = "#222222"
+    foreground = "#ffffff"
+    frame_color = "#666666"
+    timeout = 10
+
+[urgency_critical]
+    background = "#222222"
+    foreground = "#ffffff"
+    frame_color = "#bd2c40"
+    timeout = 0

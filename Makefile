@@ -42,11 +42,11 @@ font:
 
 clean-stow:
 	@echo "==> Removendo configurações antigas..."
-	rm -rf ~/.config/kitty ~/.config/fish ~/.config/i3 ~/.config/starship.toml ~/.config/nvim ~/.config/polybar ~/.config/rofi ~/.config/picom
+	rm -rf ~/.config/kitty ~/.config/fish ~/.config/i3 ~/.config/starship.toml ~/.config/nvim ~/.config/polybar ~/.config/rofi ~/.config/picom ~/.config/dunst
 
 stow: clean-stow
 	@echo "==> Aplicando dotfiles com Stow..."
-	stow kitty fish i3 starship nvim polybar rofi picom
+	stow kitty fish i3 starship nvim polybar rofi picom dunst
 
 shell:
 	@echo "==> Mudando shell para o Fish..."
