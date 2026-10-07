@@ -1,11 +1,11 @@
-.PHONY: all apt nix clean-stow stow shell
+.PHONY: all apt nix font clean-stow stow shell
 
-all: apt nix stow shell
+all: apt nix font stow shell
 
 apt:
 	@echo "==> Instalando bases do sistema..."
 	sudo apt update
-	sudo apt install -y i3 kitty fish stow xclip curl git polybar rofi feh picom flameshot
+	sudo apt install -y i3 fish stow xclip curl git polybar rofi feh picom flameshot
 	@echo "==> Instalando nix"
 	curl -L https://nixos.org/nix/install | sh -s -- --daemon
 
@@ -27,9 +27,18 @@ nix:
 	nixpkgs#gh \
 	nixpkgs#delta \
 	nixpkgs#neovim \
+	nixpkgs#kitty \
 	--extra-experimental-features "nix-command flakes"
 
-	
+font:
+	@echo "==> Instalando fontes via Nix e configurando links..."
+	. /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh && \
+	nix profile add nixpkgs#nerd-fonts.jetbrains-mono --extra-experimental-features "nix-command flakes"
+	mkdir -p ~/.local/share/fonts
+	ln -sf ~/.nix-profile/share/fonts ~/.local/share/fonts/nix
+	@echo "==> Atualizando cache de fontes do sistema..."
+	fc-cache -fv
+
 clean-stow:
 	@echo "==> Removendo configurações antigas..."
 	rm -rf ~/.config/kitty ~/.config/fish ~/.config/i3 ~/.config/starship.toml ~/.config/nvim ~/.config/polybar ~/.config/rofi ~/.config/picom
