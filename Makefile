@@ -6,6 +6,8 @@ apt:
 	@echo "==> Instalando bases do sistema..."
 	sudo apt update
 	sudo apt install -y i3 fish stow xclip curl git polybar rofi feh picom flameshot
+	@echo "==> Instalando kitty (versão binária isolada)..."
+	curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
 	@echo "==> Instalando nix"
 	curl -L https://nixos.org/nix/install | sh -s -- --daemon
 
@@ -27,7 +29,6 @@ nix:
 	nixpkgs#gh \
 	nixpkgs#delta \
 	nixpkgs#neovim \
-	nixpkgs#kitty \
 	--extra-experimental-features "nix-command flakes"
 
 font:
