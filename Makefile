@@ -3,7 +3,7 @@
 all: apt nix font stow shell
 
 apt:
-	@echo "==> Instalando bases do sistema..."
+	@echo "==> Instalando bases do OS..."
 	sudo apt update
 	sudo apt install -y i3 fish stow xclip curl git polybar rofi feh picom flameshot
 	@echo "==> Instalando kitty (versão binária isolada)..."
